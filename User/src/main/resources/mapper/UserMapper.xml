@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.UserMapper">
+    <resultMap id="java_user" type="entity.User">
+<!--        id是主键；result 是普通字段-->
+        <id property="id" column="id"/>
+        <result property="phone" column="phone"/>
+        <result property="password" column="password"/>
+        <result property="name" column="name"/>
+        <result property="status" column="status" typeHandler="utils.UserStatusTrasition"/>
+    </resultMap>
+    <!-- 查询操作 -->
+    <select id="selectAllUser" resultMap="java_user">
+        SELECT * FROM user
+    </select>
+
+
+    <insert id="addUser" parameterType="entity.User">
+        insert into user (`id`, `phone`, `password`, `name`, `status`)
+        values(#{id}, #{phone}, #{password}, #{name}, #{status, typeHandler=utils.UserStatusTrasition});
+    </insert>
+
+
+</mapper>
