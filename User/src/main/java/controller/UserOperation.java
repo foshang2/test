@@ -14,6 +14,9 @@ import java.util.List;
 public class UserOperation {
 
     @Autowired
+    private UserMapper userMapper1;
+
+    @Autowired
     private UserMapper userMapper;
 
     @GetMapping("selectAllUser")
