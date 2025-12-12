@@ -12,9 +12,6 @@ import java.util.List;
 public class UserHistoryOperation {
 
 
-    @Autowired
-    private UserHistoryMapper userHistoryMapper1;
-
 
 
     @Autowired
