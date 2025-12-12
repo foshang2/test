@@ -19,6 +19,8 @@ public class UserOperation {
     @GetMapping("selectAllUser")
     public LinkedList<User> selectAllUser(){
 
+
+
         LinkedList<User> users = userMapper.selectAllUser();
         users.forEach(System.out::println);
         return users;
